@@ -10,4 +10,4 @@ Follow these steps to run the web app:
 5. Install dependencies by running the following command: yarn install
 6. Run the local server using yarn start or yarn start:dev if you would like it to restart on file changes
 7. Open a browser and navigate to http://localhost:3000/
-8. Enter text into the text field and you should see them appear in a list below. They will also be added to the database
+8. Enter text into the text field, and you should see them appear in a list below. They will also be added to the database

@@ -26,4 +26,10 @@ export class TodoRepository{
         return this.todoModel.findOneAndUpdate(todoFilterQuery, todo, {new: true});
     }
 
+    async findOneAndDelete(todoFilterQuery: FilterQuery<Todo>){
+        this.todoModel.deleteOne(todoFilterQuery).exec();
+        console.log("ITEM DELETED")
+        return
+    }
+
 }

@@ -3,6 +3,7 @@ import { List, ListItem, ListItemText, ListItemIcon, ListItemButton, Box, IconBu
 import DeleteIcon from '@mui/icons-material/Delete';
 
 import getHandler from "./getHandler";
+import deleteHandler from "./deleteHandler"
 
 
 export class Todo_List extends React.Component<{}, {listItems: any}> {
@@ -47,7 +48,13 @@ export class Todo_List extends React.Component<{}, {listItems: any}> {
                     sx={{ width: '100%', maxWidth: 360, border: 1 }}
                     key = {item.todoID}
                     secondaryAction={
-                      <IconButton edge="end" aria-label="delete">
+                      <IconButton edge="end" aria-label="delete"
+                        onClick={() => {
+                          //alert('clicked');
+                          deleteHandler(item.todoID); // This is where deletion happens
+                          // this.updateList(); // This is done automatically by componentDidMount()
+                      }}
+                      >
                         <DeleteIcon />
                       </IconButton>
                     }

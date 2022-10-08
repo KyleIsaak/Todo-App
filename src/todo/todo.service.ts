@@ -29,8 +29,9 @@ export class TodoService{
         return this.todoRepository.findOneAndUpdate({todoID}, todoUpdates);
     }
 
-    async deleteTodo(todoID: string, todoUpdates: UpdateTodoDto): Promise<Todo>{
-        return this.todoRepository.findOneAndUpdate({todoID}, todoUpdates);
+    async deleteTodo(todoID: string): Promise<Todo>{
+        this.todoRepository.findOneAndDelete({todoID});
+        return
     }
 
 }

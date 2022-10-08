@@ -5,6 +5,9 @@ import Button from '@mui/material/Button';
 
 import getHandler from "./getHandler"
 import Todo_List from './List'
+
+import deleteHandler from "./deleteHandler"
+
 // The text that will be sent in the POST request
 // This variable is updated by the text field
 // whenever its contents are changed.
@@ -32,6 +35,7 @@ export default function Submit_button(listComponent){
       onClick={() => {
         handleSubmit();
         //alert('clicked');
+        //deleteHandler(textToAdd); // ** DO NOT ENABLE, THIS IS TO TEST DELETING **
       }}
     >
       Submit

@@ -3,7 +3,6 @@ export default async function getHandler(){
     async function makeRequest (){
         
         // Make HTTP GET request to todo.controller functions
-        //fetch('/todo/todo', {
         return fetch('http://localhost:3000/todo/todo',
         {
             method: 'GET',

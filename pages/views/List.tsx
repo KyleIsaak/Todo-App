@@ -1,9 +1,16 @@
+// Core:
 import * as React from 'react';
 import { List, ListItem, ListItemText, ListItemIcon, ListItemButton, Box, IconButton} from '@mui/material'
-import DeleteIcon from '@mui/icons-material/Delete';
 
+// Icons:
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteForeverTwoToneIcon from '@mui/icons-material/DeleteForeverTwoTone';
+
+// Local:
 import getHandler from "./getHandler";
 import deleteHandler from "./deleteHandler"
+import patchHandler from "./patchHandler"
+import Text_field from './Text_field';
 
 
 export class Todo_List extends React.Component<{}, {listItems: any}> {
@@ -34,7 +41,7 @@ export class Todo_List extends React.Component<{}, {listItems: any}> {
     fetchListItems();
   }
 
-  render() {
+    render() {
     this.updateList();
     return (
       <Box
@@ -48,15 +55,27 @@ export class Todo_List extends React.Component<{}, {listItems: any}> {
                     sx={{ width: '100%', maxWidth: 360, border: 1 }}
                     key = {item.todoID}
                     secondaryAction={
-                      <IconButton edge="end" aria-label="delete"
+                      <Box>
+                        <IconButton edge="end" aria-label="delete"
+                          onClick={() => {
+                            //alert('clicked');
+                            patchHandler(item.todoID, Text_field.name); // This is where deletion happens
+                            // this.updateList(); // This is done automatically by componentDidMount()
+                        }}
+                        >
+                          <EditIcon />
+                        </IconButton>
+
+                        <IconButton edge="end" aria-label="delete"
                         onClick={() => {
                           //alert('clicked');
-                          deleteHandler(item.todoID); // This is where deletion happens
+                          deleteHandler(item.todoID, ); // This is where deletion happens
                           // this.updateList(); // This is done automatically by componentDidMount()
-                      }}
-                      >
-                        <DeleteIcon />
-                      </IconButton>
+                        }}
+                        >
+                        <DeleteForeverTwoToneIcon />
+                        </IconButton>
+                      </Box>
                     }
                   >
                     <ListItemText>{item.task}</ListItemText>

@@ -1,12 +1,15 @@
+// Core
 import * as React from 'react';
 import { useCallback } from 'react'
 
+// MUI
 import Button from '@mui/material/Button';
 
-import getHandler from "./getHandler"
-import Todo_List from './List'
+// Local
+// import getHandler from "./getHandler"
+// import Todo_List from './List'
+// import deleteHandler from "./deleteHandler" // FOR TESTING ONLY
 
-import deleteHandler from "./deleteHandler"
 
 // The text that will be sent in the POST request
 // This variable is updated by the text field
@@ -16,24 +19,28 @@ var textToAdd;
 export default function Submit_button(listComponent){
 
   // handleSubmit is called whenver the submit button is clicked
-  const handleSubmit = useCallback((e) => {
+   const handleSubmit = useCallback((e) => {
+    if (textToAdd != ("" || null)){
     // Make HTTP POST request to todo.controller functions.
     // This request uses the textToAdd variable 
-    fetch('todo/todo', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        "task": textToAdd
-      }),
+      fetch('todo/todo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          "task": textToAdd
+        }),
 
-    })
-  })
+      })
+    }
+  }) 
+
 
   return(  
     
     <Button variant="contained"
       onClick={() => {
         handleSubmit();
+        
         //alert('clicked');
         //deleteHandler(textToAdd); // ** DO NOT ENABLE, THIS IS TO TEST DELETING **
       }}

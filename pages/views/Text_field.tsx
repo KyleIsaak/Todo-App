@@ -1,7 +1,13 @@
+// Core
 import * as React from 'react';
+import { useCallback } from 'react'
+
+// MUI
 import TextField from '@mui/material/TextField';
 
+// Local
 import { updateText } from './Submit_button';
+import { updateEditText } from "./patchHandler"
 
 
 export default function Text_field() {
@@ -14,8 +20,9 @@ export default function Text_field() {
   const [name, setName] = React.useState('');
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     //console.log("input box updated")
-    setName(event.target.value);
+    setName(event.target.value)
     updateText(name)
+    updateEditText(name)
   };
 
   // Render textfield using the name variable and the handleChange function

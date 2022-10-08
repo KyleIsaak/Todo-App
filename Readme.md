@@ -11,3 +11,4 @@ Follow these steps to run the web app:
 6. Run the local server using yarn start or yarn start:dev if you would like it to restart on file changes
 7. Open a browser and navigate to http://localhost:3000/
 8. Enter text into the text field, and you should see them appear in a list below. They will also be added to the database
+9. Click on the delete buttons to remove items from the database. The list should update automatically.

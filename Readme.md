@@ -12,3 +12,7 @@ Follow these steps to run the web app:
 7. Open a browser and navigate to http://localhost:3000/
 8. Enter text into the text field, and you should see them appear in a list below. They will also be added to the database
 9. Click on the delete buttons to remove items from the database. The list should update automatically.
+
+
+
+note: There is a known bug where the last letter of the input field does not get detected. I am currently working on this, but it seems that this is the only issue currently.

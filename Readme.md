@@ -1,5 +1,5 @@
 # Todo-App
-I am still working on it as my building had a power outage today, but I have most of the functionality completed. See below for setup instructions
+Still a work in progress, but have most of the functionality is completed. See below for setup instructions
 
 
 Follow these steps to run the web app:

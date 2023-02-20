@@ -4,9 +4,6 @@ export default async function deleteHandler(ID){
 
         const path1 = 'http://localhost:3000/todo/todo/';
         const newPath = path1 + ID;
-
-        //console.log("Path: ", newPath)
-        //console.log(ID)
         
         // Make HTTP DELETE request to todo.controller functions
         fetch(newPath,
@@ -18,6 +15,6 @@ export default async function deleteHandler(ID){
 
     makeRequest (ID)
 
-    console.log("*** Item ", ID, " deleted! ***")
+    // console.log("*** Item ", ID, " deleted! ***") // Testing
     return;
 }

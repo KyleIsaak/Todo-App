@@ -10,7 +10,6 @@ async function deleteHandler(ID) {
         });
     }
     makeRequest(ID);
-    console.log("*** Item ", ID, " deleted! ***");
     return;
 }
 exports.default = deleteHandler;

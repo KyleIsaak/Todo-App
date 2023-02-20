@@ -34,19 +34,18 @@ const DeleteForeverTwoTone_1 = __importDefault(require("@mui/icons-material/Dele
 const getHandler_1 = __importDefault(require("./getHandler"));
 const deleteHandler_1 = __importDefault(require("./deleteHandler"));
 const patchHandler_1 = __importDefault(require("./patchHandler"));
-const Text_field_1 = __importDefault(require("./Text_field"));
 class Todo_List extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            listItems: []
+            listItems: [],
         };
     }
     updateList() {
         const fetchListItems = async () => {
             const listItems = await Update_List();
             this.setState({
-                listItems
+                listItems,
             });
         };
         fetchListItems();
@@ -55,36 +54,31 @@ class Todo_List extends React.Component {
         const fetchListItems = async () => {
             const listItems = await Update_List();
             this.setState({
-                listItems
+                listItems,
             });
         };
         fetchListItems();
     }
     render() {
         this.updateList();
-        return (<material_1.Box sx={{ width: '100%', maxWidth: 500, bgcolor: 'background.paper' }}>
-
-        <material_1.List sx={{ width: '100%', maxWidth: 360 }}>
-          {this.state.listItems.map(item => (<material_1.ListItem sx={{ width: '100%', maxWidth: 360, border: 1 }} key={item.todoID} secondaryAction={<material_1.Box>
-                        <material_1.IconButton edge="end" aria-label="delete" onClick={() => {
-                        (0, patchHandler_1.default)(item.todoID, Text_field_1.default.name);
+        return (<material_1.Box sx={{ width: "100%", maxWidth: 500, bgcolor: "background.paper" }}>
+        <material_1.List sx={{ width: "100%", maxWidth: 360 }}>
+          {this.state.listItems.map((item) => (<material_1.ListItem sx={{ width: "100%", maxWidth: 360, border: 1 }} key={item.todoID} secondaryAction={<material_1.Box>
+                  <material_1.IconButton edge="end" aria-label="delete" onClick={() => {
+                        (0, patchHandler_1.default)(item.todoID, document.getElementById("input").value);
                     }}>
-                          <Edit_1.default />
-                        </material_1.IconButton>
+                    <Edit_1.default />
+                  </material_1.IconButton>
 
-                        <material_1.IconButton edge="end" aria-label="delete" onClick={() => {
+                  <material_1.IconButton edge="end" aria-label="delete" onClick={() => {
                         (0, deleteHandler_1.default)(item.todoID);
                     }}>
-                        <DeleteForeverTwoTone_1.default />
-                        </material_1.IconButton>
-                      </material_1.Box>}>
-                    <material_1.ListItemText>{item.task}</material_1.ListItemText>
-                    
-                    
-                  </material_1.ListItem>))}
-                
+                    <DeleteForeverTwoTone_1.default />
+                  </material_1.IconButton>
+                </material_1.Box>}>
+              <material_1.ListItemText>{item.task}</material_1.ListItemText>
+            </material_1.ListItem>))}
         </material_1.List>
-    
       </material_1.Box>);
     }
 }
@@ -92,7 +86,7 @@ exports.Todo_List = Todo_List;
 async function Update_List() {
     async function updateList() {
         let newData = await (0, getHandler_1.default)();
-        newData.forEach(element => {
+        newData.forEach((element) => {
         });
         return newData;
     }

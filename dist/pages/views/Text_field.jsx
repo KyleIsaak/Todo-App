@@ -28,14 +28,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(require("react"));
 const TextField_1 = __importDefault(require("@mui/material/TextField"));
-const Submit_button_1 = require("./Submit_button");
-const patchHandler_1 = require("./patchHandler");
 function Text_field() {
-    const [name, setName] = React.useState('');
+    const [name, setName] = React.useState("");
     const handleChange = (event) => {
         setName(event.target.value);
-        (0, Submit_button_1.updateText)(name);
-        (0, patchHandler_1.updateEditText)(name);
     };
     return (<TextField_1.default id="input" label="Enter item here" variant="outlined" value={name} onChange={handleChange}/>);
 }

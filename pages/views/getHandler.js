@@ -11,21 +11,19 @@ export default async function getHandler(){
         // if the results are valid, update the list
         .then((results) => {
         if (results.ok){
-            //console.log('Succesfully returned', results.json())
             return results.json();
         } 
         })
         .then((data) => {
             let listItems = data;
-            //console.log(listItems);
-
             return listItems;
         })
     }
 
-    var resultsOfRequest = makeRequest ()
+    var resultsOfRequest = makeRequest ();
 
-    //console.log("returned data")
-    //console.log("resultsOfRequest: ", resultsOfRequest)
+    //console.log("returned data"); // Testing
+    //console.log("resultsOfRequest: ", resultsOfRequest); // Testing
+    
     return resultsOfRequest;
 }

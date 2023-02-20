@@ -26,32 +26,26 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateText = void 0;
 const React = __importStar(require("react"));
 const react_1 = require("react");
 const Button_1 = __importDefault(require("@mui/material/Button"));
-var textToAdd;
-function Submit_button(listComponent) {
-    const handleSubmit = (0, react_1.useCallback)((e) => {
-        if (textToAdd != ("" || null)) {
-            fetch('todo/todo', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+function Submit_button() {
+    const handleSubmit = (0, react_1.useCallback)((newText) => {
+        if (newText) {
+            fetch("todo/todo", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    "task": textToAdd
+                    task: newText,
                 }),
             });
         }
     });
     return (<Button_1.default variant="contained" onClick={() => {
-            handleSubmit();
+            handleSubmit(document.getElementById("input").value);
         }}>
       Submit
     </Button_1.default>);
 }
 exports.default = Submit_button;
-function updateText(newText) {
-    textToAdd = newText;
-}
-exports.updateText = updateText;
 //# sourceMappingURL=Submit_button.js.map

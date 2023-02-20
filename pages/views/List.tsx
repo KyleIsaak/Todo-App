@@ -1,16 +1,8 @@
 // Core:
 import * as React from "react";
-import {
-  List,
-  ListItem,
-  ListItemText,
-  ListItemIcon,
-  ListItemButton,
-  Box,
-  IconButton,
-} from "@mui/material";
 
-// Icons:
+// MUI:
+import {List, ListItem, ListItemText, Box, IconButton,} from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverTwoToneIcon from "@mui/icons-material/DeleteForeverTwoTone";
 
@@ -18,7 +10,6 @@ import DeleteForeverTwoToneIcon from "@mui/icons-material/DeleteForeverTwoTone";
 import getHandler from "./getHandler";
 import deleteHandler from "./deleteHandler";
 import patchHandler from "./patchHandler";
-import Text_field from "./Text_field";
 
 export class Todo_List extends React.Component<{}, { listItems: any }> {
   constructor(props) {
@@ -51,11 +42,11 @@ export class Todo_List extends React.Component<{}, { listItems: any }> {
   render() {
     this.updateList();
     return (
-      <Box sx={{ width: "100%", maxWidth: 500, bgcolor: "background.paper" }}>
-        <List sx={{ width: "100%", maxWidth: 360 }}>
+      <Box sx={{ width: "100%", maxWidth: 500, bgcolor: "background.paper"}}>
+        <List sx={{ width: "100%", maxWidth: 500}}>
           {this.state.listItems.map((item) => (
             <ListItem
-              sx={{ width: "100%", maxWidth: 360, border: 1 }}
+              sx={{ width: "100%", maxWidth: 400, border: 1, alignSelf: "center", margin: "0 auto", paddingBottom: "5px", marginBottom: "5px"}}
               key={item.todoID}
               secondaryAction={
                 <Box>

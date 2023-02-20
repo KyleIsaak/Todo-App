@@ -11,7 +11,6 @@ const centeredStyle = {
   alignItems: "center",
   justifyContent: "center",
   fontSize: "22pt",
-  //height: '100vh',
 };
 
 const titleStyle = {
@@ -19,7 +18,6 @@ const titleStyle = {
   alignItems: "center",
   justifyContent: "center",
   fontSize: "22pt",
-  //height: '100vh',
 };
 
 export const Index = (props) => {

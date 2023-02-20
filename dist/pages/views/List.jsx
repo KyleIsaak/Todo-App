@@ -62,8 +62,8 @@ class Todo_List extends React.Component {
     render() {
         this.updateList();
         return (<material_1.Box sx={{ width: "100%", maxWidth: 500, bgcolor: "background.paper" }}>
-        <material_1.List sx={{ width: "100%", maxWidth: 360 }}>
-          {this.state.listItems.map((item) => (<material_1.ListItem sx={{ width: "100%", maxWidth: 360, border: 1 }} key={item.todoID} secondaryAction={<material_1.Box>
+        <material_1.List sx={{ width: "100%", maxWidth: 500 }}>
+          {this.state.listItems.map((item) => (<material_1.ListItem sx={{ width: "100%", maxWidth: 400, border: 1, alignSelf: "center", margin: "0 auto", paddingBottom: "5px", marginBottom: "5px" }} key={item.todoID} secondaryAction={<material_1.Box>
                   <material_1.IconButton edge="end" aria-label="delete" onClick={() => {
                         (0, patchHandler_1.default)(item.todoID, document.getElementById("input").value);
                     }}>

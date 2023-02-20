@@ -41,10 +41,3 @@ export class TodoController{
     }
 
 }
-
-/*
-module.exports = {
-    Get,
-    Post
-}
-*/

@@ -86,8 +86,6 @@ exports.Todo_List = Todo_List;
 async function Update_List() {
     async function updateList() {
         let newData = await (0, getHandler_1.default)();
-        newData.forEach((element) => {
-        });
         return newData;
     }
     const data = await updateList();

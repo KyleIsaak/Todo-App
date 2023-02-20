@@ -87,28 +87,10 @@ export class Todo_List extends React.Component<{}, { listItems: any }> {
 async function Update_List() {
   async function updateList() {
     let newData = await getHandler();
-    //console.log("data = ", data);
-
-    newData.forEach((element) => {
-      // console.log("todoID: ", element.todoID)
-      // console.log("task: ", element.task)
-      // dataList.push(element)
-    });
-
     return newData;
   }
 
   const data = await updateList();
-  //console.log("data = ", data)
 
   return data;
 }
-
-/*
-{tasks.map(item =>(
-        <ListItem
-          key = {item.task}
-        >
-        </ListItem>
-      ))}
-*/
